@@ -97,6 +97,7 @@ const config = {
     }),
 
     new HtmlWebpackPlugin({
+      title: 'Challenge 28',
       template: 'src/index.html'
     }),
 

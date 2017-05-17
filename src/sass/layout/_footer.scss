@@ -9,6 +9,12 @@
   background: hsl(0, 0%, 0%);
 
   color: $text-light-color;
+
+  @media (max-width: 1180px) {
+    & {
+      font-size: 0.8rem;
+    }
+  }
 }
 
 .footer-section {
@@ -55,7 +61,7 @@
   margin: 0 em(25px);
 
   color: $text-light-color;
-  font-size: rem(51px);
+  font-size: em(51px);
 
   &:hover {
     color: $brand-color;

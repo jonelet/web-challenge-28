@@ -42,4 +42,18 @@
   .slick-next {
     right: -9%;
   }
+
+  @media (max-width: 1350px) {
+    & {
+      padding: 0 55px;
+    }
+
+    .slick-prev {
+      left: 0;
+    }
+
+    .slick-next {
+      right: 0;
+    }
+  }
 }
