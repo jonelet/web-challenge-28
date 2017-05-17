@@ -1,0 +1,66 @@
+.side-col__center {
+  @extend %flex-center;
+}
+
+.btn {
+  .side-col__center & {
+    margin-top: 20px;
+  }
+}
+
+.albums__item-col {
+  padding: 0;
+}
+
+.albums__item-row {
+  margin: 0;
+}
+
+.albums__item-link {
+  display: block;
+  position: relative;
+
+  &::before {
+    @extend %animation;
+
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    background: hsla(0, 0%, 0%, 0.2) center center no-repeat;
+  }
+
+  &:hover::before {
+    background-color: $brand-color;
+    opacity: .7;
+  }
+
+  &::after {
+    @extend %animation;
+
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: center center no-repeat image('slider-arrow.png');
+    opacity: 0;
+
+    transform: rotate(180deg);
+  }
+
+  &:hover::after {
+      opacity: 1;
+  }
+}
+
+.album__img {
+  width: 100%;
+  filter: grayscale(1);
+}

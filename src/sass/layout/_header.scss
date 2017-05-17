@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.l-header {
+  width: 100%;
+  position: absolute;
+  top: 35px;
+  left: 0;
+
+  z-index: 1;
+}
+
+.home-header__wrap {
+  background: $home-header-bg;
+
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,49 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+// 2. Vendors
+@import
+  'vendor/venobox';
+
+/* vendor npm */
+@import
+  '~venobox/venobox/venobox.css',
+  '~bootstrap/dist/css/bootstrap.min.css',
+  '~slick-carousel/slick/slick.css';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/navigation',
+  'layout/forms',
+  'layout/footer';
+
+// 5. Components
+@import
+  'components/button';
+
+// 6. Page-specific styles
+@import
+  'pages/main-slider',
+  'pages/services',
+  'pages/sections',
+  'pages/albums',
+  'pages/thoughts',
+  'pages/products',
+  'pages/home';
+
+// 7. Themes
+@import
+  'themes/default';

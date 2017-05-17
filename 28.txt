@@ -1,0 +1,7 @@
+zadanie 28
+
+1. start 22.01
+2. html/css/js (w tym jquery), bootstrap 4
+3. rwd obowiazkowo 
+
+

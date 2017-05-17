@@ -1,0 +1,40 @@
+.side-form {
+  width: 80%;
+  color: $text-light-color;
+
+  input {
+    @include placeholder {
+      color: $text-light-color;
+      font-size: rem(27px);
+      font-weight: 300;
+    }
+  }
+}
+
+.side-form__item {
+  border-bottom: 2px solid #f7adb1;
+  padding: em(50px) 0;
+
+  &:last-child {
+    border: none;
+  }
+}
+
+.side-form__label {
+  display: block;
+
+  font: 700 rem(14px) $secondary-font;
+  text-transform: uppercase;
+}
+
+.side-form__input {
+  @include on-event{
+    outline: none;
+  };
+
+  border: none;
+  background: none;
+
+  color: $text-light-color;
+  font-family: $primary-font;
+}

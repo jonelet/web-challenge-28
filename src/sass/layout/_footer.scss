@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.l-footer {
+  padding-top: em($section-padding-top - 50);
+  padding-bottom: em($section-padding-top - 50);
+  margin-top: $section-padding-top;
+  background: hsl(0, 0%, 0%);
+
+  color: $text-light-color;
+}
+
+.footer-section {
+  padding: em(50px) 0;
+  border-bottom: 1px solid #292929;
+}
+
+.footer-nav__ul {
+  @extend %reset-list;
+
+  text-align: center;
+}
+
+.footer-nav__li {
+  @extend %inline-block-element;
+}
+
+.footer-nav__link {
+  @include transition(color .25s);
+
+  padding: 0 em(20px);
+
+  color: $text-light-color;
+  font: 700 rem(14px) $secondary-font;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $brand-color;
+    text-decoration: none;
+  }
+}
+
+.footer-socials {
+  @extend %reset-list;
+
+  text-align: center;
+}
+
+.footer-socials__li {
+  @extend %inline-block-element;
+}
+
+.footer-socials__link {
+  margin: 0 em(25px);
+
+  color: $text-light-color;
+  font-size: rem(51px);
+
+  &:hover {
+    color: $brand-color;
+    text-decoration: none;
+  }
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: rem(28px);
+  font-weight: 300;
+}

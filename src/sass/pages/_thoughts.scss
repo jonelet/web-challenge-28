@@ -1,0 +1,45 @@
+.thoughts__item {
+  padding: 16px;
+}
+
+.thoughts__item-wrap {
+  min-height: em(375px);
+  padding: em(50px);
+  background: #f2f2f2;
+}
+
+.thoughts__title {
+  margin: 0;
+
+  font-size: em(28px);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.thoughts__time {
+  margin: em(20px) 0;
+  display: block;
+
+  color: $brand-color;
+  font-family: $secondary-font;
+  font-size: em(14px);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.thoughts__text {
+  color: #666666;
+  line-height: 1.7;
+  font-family: Tahoma;
+  font-size: em(17px);
+}
+
+.thoughts__slider {
+  .slick-prev {
+    left: -9%;
+  }
+
+  .slick-next {
+    right: -9%;
+  }
+}

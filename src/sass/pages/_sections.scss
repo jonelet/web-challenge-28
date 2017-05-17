@@ -1,0 +1,51 @@
+.h-section {
+  padding-top: em($section-padding-top);
+}
+
+.albums__text-col {
+  @extend %flex-center;
+}
+
+.section__header {
+  text-align: center;
+
+  &.section__header--full {
+    padding-bottom: em(80px);
+  }
+}
+
+.section__title {
+  margin: 0 0 em(16px);
+
+  color: $brand-color;
+  font-size: em(27px);
+  font-family: $secondary-font;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.section__desc {
+  line-height: 1.2;
+  font-weight: 300;
+  font-size: em(49px);
+}
+
+.h-section__side-special {
+  height: 670px;
+}
+
+.h-section__side-special--dark {
+  background: hsl(0, 0%, 0%);
+}
+
+.h-section__side-special--brand {
+  background: $brand-color;
+}
+
+.h-section__side-img-wrap {
+  padding: 0;
+}
+
+.touch {
+  @extend %flex-center;
+}

@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.btn {
+  padding: em(23px) em(20px);
+  background: $brand-color;
+  border-radius: 0;
+
+  color: $text-light-color;
+  font-family: $secondary-font;
+  font-size: rem(14px);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+
+  &:hover {
+    @extend %animation;
+
+    background: #242424;
+  }
+}
+
+button {
+  @include on-event{
+    outline: none;
+  };
+
+  &:hover {
+    cursor: pointer;
+  }
+}

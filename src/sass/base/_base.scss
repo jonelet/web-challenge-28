@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $primary-font;
+}
+
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  @include on-event {
+    color: $brand-color;
+    text-decoration: none;
+  }
+
+  color: $brand-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
