@@ -73,9 +73,21 @@ const config = {
           'file-loader',
           {
             loader: 'image-webpack-loader',
-            options: {}
+            options: {
+              query: {
+                mozjpeg: {
+                  progressive: true,
+                },
+                gifsicle: {
+                  interlaced: true,
+                },
+                optipng: {
+                  optimizationLevel: 7,
+                }
+              }
+            } // options
           }
-        ]
+        ]// use
       }
     ] //rules end
   },
