@@ -10,6 +10,10 @@
   background: #ececec;
 
   position: relative;
+
+  @include for-size(tablet-landscape-down) {
+    padding: 59px 28px;
+  }
 }
 
 .products__price {

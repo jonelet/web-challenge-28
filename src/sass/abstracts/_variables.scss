@@ -16,16 +16,16 @@ $text-light-color: hsl(0, 0%, 100%) !default;
 $brand-color: hsl(356, 82%, 77%) !default;
 $home-header-bg: hsl(0, 0%, 14%);
 
-$section-padding-top: 160px;
-
-
+$section-padding-top: 160px !default;
+$section-header-top-medium: 110px !default;
+$section-header-top-small: 70px !default;
+$section-header-padding-bottom: 80px !default;
+$section-header-padding-bottom-medium: 60px !default;
 
 
 /// Container's maximum width
 /// @type Length
 $max-width: 1180px !default;
-
-
 
 
 
@@ -35,7 +35,7 @@ $max-width: 1180px !default;
 $breakpoints: (
   'small': 320px,
   'medium': 768px,
-  'large': 1024px,
+  'large': 991px,
 ) !default;
 
 

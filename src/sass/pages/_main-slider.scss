@@ -34,9 +34,6 @@
 .slick-dots {
   @extend %reset-list;
 
-  position: absolute;
-  bottom: 36px;
-
   li {
     @extend %inline-block-element;
   }
@@ -56,6 +53,11 @@
     flex: initial;
 
     transform: rotate(45deg);
+
+    @include for-size (phone-only) {
+      width: 20px;
+      height: 16px;
+    }
   }
 
   .slick-active  button {
@@ -77,6 +79,27 @@
     & .slick-next {
       right: 70px;
     }
+
+    .slick-dots {
+      position: absolute;
+      bottom: 36px;
+
+      @include for-size(tablet-landscape-down) {
+        bottom: 43px;
+      }
+
+      @include for-size (phone-only) {
+        bottom: 12px;
+      }
+    }
+
+    @include for-size (phone-only) {
+      height: 370px;
+    }
+
+    @include for-size (small-phone-only) {
+      height: 300px;
+    }
 }
 
 .main-slider__wrap {
@@ -91,6 +114,12 @@
     right: 53px;
     bottom: 53px;
     left: 53px;
+
+    @include for-size(phone-only) {
+      right: 20px;
+      bottom: 20px;
+      left: 20px;
+    }
   }
 }
 
@@ -103,6 +132,10 @@
   font-size: rem(51px);
   font-weight: 300;
   text-align: center;
+
+  @include for-size(tablet-landscape-down) {
+    font-size: rem(35px);
+  }
 }
 
 .main-slider__text-big {
@@ -113,4 +146,8 @@
   font: 700 rem(57px) $secondary-font;
   text-transform: uppercase;;
   letter-spacing: 1px;
+
+  @include for-size(tablet-landscape-down) {
+    font-size: rem(40px);
+  }
 }

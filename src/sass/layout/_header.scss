@@ -9,6 +9,19 @@
   left: 0;
 
   z-index: 1;
+
+  &.is_fixed {
+    width: 100%;
+    background: #242424;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1110;
+  }
+
+  @include for-size(tablet-landscape-down) {
+    top: 0;
+  }
 }
 
 .home-header__wrap {

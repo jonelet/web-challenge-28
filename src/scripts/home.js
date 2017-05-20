@@ -2,6 +2,8 @@ const DOM = {
   $main_slider: $('.main-slider'),
   $thoughts__slider: $('.thoughts__slider'),
   $venobox: $('.venobox'),
+  $header: $('.l-header'),
+  $nav_btn: $('.nav-btn'),
   $main_nav: $('.main-nav')
 };
 
@@ -30,12 +32,42 @@ var PAGE_API = (function(){
 
   function setBasePlugins() {
     DOM.$main_slider.slick({
-      dots: true
+      dots: true,
+      responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 599,
+            settings: {
+              arrows: false
+            }
+          }
+        ]
     });
 
     DOM.$thoughts__slider.slick({
       slidesToShow: 2,
-      slidesToScroll: 2
+      slidesToScroll: 2,
+      responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 599,
+            settings: {
+              slidesToShow: 1,
+              dots: true,
+              arrows: false
+            }
+          }
+        ]
     });
 
     DOM.$venobox.venobox();
@@ -50,13 +82,13 @@ var PAGE_API = (function(){
       var scrollPos = $(document).scrollTop();
       // console.log('scrollPos', scrollPos);
 
-      DOM.$main_nav.find('a').each(function () {
+      DOM.$header.find('a').each(function () {
           var link = $(this);
           var ref_element = $(link.attr("href"));
           var ref_element_top = ref_element.position().top;
 
           if (ref_element_top <= ( scrollPos + 15 ) && ref_element_top + ref_element.height() > scrollPos) {
-              DOM.$main_nav.find('a').removeClass("is_active");
+              DOM.$header.find('a').removeClass("is_active");
               link.addClass("is_active");
               return false;
           }
@@ -67,12 +99,18 @@ var PAGE_API = (function(){
     var scroll = $(window).scrollTop();
 
     if (scroll >= 40) {
-      DOM.$main_nav.addClass('is_fixed');
+      DOM.$header.addClass('is_fixed');
 
     } else {
-      DOM.$main_nav.removeClass('is_fixed');
+      DOM.$header.removeClass('is_fixed');
 
     }
+  }
+
+  function navBtn() {
+    DOM.$nav_btn.on('click tap', function(){
+      DOM.$header.toggleClass('is_active');
+    })
   }
 
   function init() {
@@ -80,9 +118,8 @@ var PAGE_API = (function(){
     $(document).on("scroll", onScroll);
     setSmoothScrollingToAnchor();
     preventEmptyLink();
+    navBtn();
   }
-
-
 
   return {
     init: init

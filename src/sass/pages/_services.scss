@@ -24,6 +24,15 @@
     background: $brand-color;
     opacity: .7;
   }
+
+  @media (max-width: 767px) {
+    max-width: 500px;
+    margin: 0 auto em(55px);
+
+    .services__list-col:last-child & {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .services__title {
@@ -35,10 +44,11 @@
 
   color: $text-light-color;
   font-family: $secondary-font;
-  font-size: 27px;
+  font-size: em(27px);
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  text-shadow: 0px 0px 11px rgba(0, 0, 0, 0.3);
 }
 
 .services__img {

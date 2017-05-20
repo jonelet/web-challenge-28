@@ -10,10 +10,22 @@
 
 .albums__item-col {
   padding: 0;
+
+  @include for-size(small-phone-only) {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
 }
 
 .albums__item-row {
   margin: 0;
+
+  @include for-size(small-phone-only) {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
 }
 
 .albums__item-link {
@@ -57,6 +69,10 @@
 
   &:hover::after {
       opacity: 1;
+  }
+
+  @include for-size(small-phone-only) {
+    margin-bottom: 15px;
   }
 }
 

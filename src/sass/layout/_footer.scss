@@ -5,16 +5,26 @@
 .l-footer {
   padding-top: em($section-padding-top - 50);
   padding-bottom: em($section-padding-top - 50);
-  margin-top: $section-padding-top;
+  margin-top: em($section-padding-top);
   background: hsl(0, 0%, 0%);
 
   color: $text-light-color;
 
-  @media (max-width: 1180px) {
+  @include for-size(desktop-down) {
     & {
       font-size: 0.8rem;
     }
   }
+
+  @include for-size(tablet-landscape-down) {
+    margin-top: em($section-padding-top);
+  }
+
+  @include for-size(phone-only) {
+    padding-top: em($section-header-top-medium - 50);
+    padding-bottom: em($section-header-top-medium - 50);
+  }
+
 }
 
 .footer-section {
@@ -30,6 +40,11 @@
 
 .footer-nav__li {
   @extend %inline-block-element;
+
+  @include for-size(small-phone-only) {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }
 
 .footer-nav__link {
@@ -45,6 +60,10 @@
     color: $brand-color;
     text-decoration: none;
   }
+
+  @include for-size(small-phone-only) {
+    font-size: rem(18px);
+  }
 }
 
 .footer-socials {
@@ -55,6 +74,10 @@
 
 .footer-socials__li {
   @extend %inline-block-element;
+
+  @include for-size(small-phone-only) {
+    width: 31%;
+  }
 }
 
 .footer-socials__link {
@@ -66,6 +89,10 @@
   &:hover {
     color: $brand-color;
     text-decoration: none;
+  }
+
+  @include for-size(tablet-landscape-down) {
+    margin: 0 em(20px);
   }
 }
 
