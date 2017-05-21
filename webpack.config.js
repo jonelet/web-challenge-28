@@ -7,6 +7,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const options = {
   sourceMap: process.env.NODE_ENV === 'development' ? true : false
@@ -15,6 +16,50 @@ const options = {
 console.log('--------------------------------');
 console.log(process.env.NODE_ENV);
 console.log('--------------------------------');
+
+
+var user_plugins = [
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    Tether: 'tether'
+  }),
+
+  new ExtractTextPlugin({
+    filename: 'style.bundle.css',
+    allChunks: true
+  }),
+
+  new webpack.optimize.CommonsChunkPlugin({
+    names: ['vendor', 'manifest']
+  }),
+
+  new HtmlWebpackPlugin({
+    title: 'Challenge 28',
+    template: 'src/index.html'
+  }),
+
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+  }),
+
+  new BrowserSyncPlugin({
+    host: 'localhost',
+    port: 3000,
+    files: ['./assetsss/*.html'],
+    server: { baseDir: ['dist'] }
+  })
+];
+
+if (process.env.NODE_ENV === 'development') {
+  user_plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+        include: /\.min\.js$/,
+        minimize: true
+    })
+  );
+}
+
 
 const VENDOR_LIBS = [
   'lodash'
@@ -68,7 +113,7 @@ const config = {
 
       // img loaders
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           'file-loader',
           {
@@ -85,45 +130,14 @@ const config = {
                   optimizationLevel: 7,
                 }
               }
-            } // options
+            }
           }
-        ]// use
+        ]
       }
     ] //rules end
   },
   watch: true,
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      Tether: 'tether'
-    }),
-
-    new ExtractTextPlugin({
-      filename: 'style.bundle.css',
-      allChunks: true
-    }),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest']
-    }),
-
-    new HtmlWebpackPlugin({
-      title: 'Challenge 28',
-      template: 'src/index.html'
-    }),
-
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    }),
-
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      port: 3000,
-      files: ['./assetsss/*.html'],
-      server: { baseDir: ['dist'] }
-    })
-  ]
+  plugins: user_plugins
 };
 
 module.exports = config;

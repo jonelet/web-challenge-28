@@ -30,6 +30,15 @@ var PAGE_API = (function(){
     });
   }
 
+  function venoboxUlrChange() {
+    var items = $('.vbox-item');
+
+    items.each(function(){
+      var new_href = $(this).find('img').attr('src');
+      $(this).attr('href', new_href);
+    })
+  }
+
   function setBasePlugins() {
     DOM.$main_slider.slick({
       dots: true,
@@ -71,6 +80,7 @@ var PAGE_API = (function(){
     });
 
     DOM.$venobox.venobox();
+    venoboxUlrChange();
   }
 
   function onScroll() {

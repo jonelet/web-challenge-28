@@ -30,6 +30,8 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.17.0",
+    "uglify-js": "^3.0.10",
+    "uglifyjs-webpack-plugin": "^0.4.3",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1",
     "webpack-dev-middleware": "^1.10.2",
