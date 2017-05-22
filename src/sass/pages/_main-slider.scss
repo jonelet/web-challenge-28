@@ -81,8 +81,12 @@
     }
 
     .slick-dots {
+      width: 100%;
       position: absolute;
+      left: 0;
       bottom: 36px;
+
+      text-align: center;
 
       @include for-size(tablet-landscape-down) {
         bottom: 43px;

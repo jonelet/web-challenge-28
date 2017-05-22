@@ -1,10 +1,114 @@
+import ScrollReveal from 'scrollreveal/dist/scrollreveal.min.js';
+window.sr = new ScrollReveal({
+  mobile: false
+});
+
+const PAGE_ANIMATION = (function(){
+  var init = function() {
+    /* nav */
+    sr.reveal('.section__header--full', {
+      viewFactor: .3,
+      duration: 900,
+      delay: 200
+    });
+
+    sr.reveal('.services__list-col', {
+      duration: 900,
+      origin: 'bottom',
+      distance: '100px',
+      scale: .9
+    }, 400);
+
+    sr.reveal('.section__header--text-right', {
+      delay: 200,
+      duration: 1300,
+      distance: '30%',
+      origin: 'left',
+      scale: 1
+    });
+
+    sr.reveal('.albums__item-row', {
+      delay: 600,
+      distance: '30%',
+      duration: 1300,
+      origin: 'right',
+      scale: 1
+    });
+
+    sr.reveal('.thoughts__item', {
+      delay: 300,
+      distance: '100px',
+      duration: 1100,
+      rotate: { x: 60, y: 60 },
+      scale: .2
+    }, 300);
+
+    sr.reveal('.section__header--side-left', {
+      delay: 200,
+      duration: 1100,
+      distance: '30%',
+      origin: 'right',
+      scale: 1,
+      viewFactor: .4
+    });
+
+    sr.reveal('.h-section__side-special--dark', {
+      delay: 1200,
+      duration: 1000,
+      distance: '30%',
+      origin: 'left',
+      scale: 1,
+      viewFactor: .4
+    });
+
+    sr.reveal('.products__item', {
+      delay: 300,
+      distance: '100px',
+      duration: 1100,
+      rotate: { x: 60, y: 60 },
+      scale: .2
+    }, 300);
+
+    sr.reveal('.section__header--side-right', {
+      delay: 200,
+      duration: 700,
+      distance: '60%',
+      origin: 'left',
+      scale: 1,
+      viewFactor: .4
+    });
+
+    sr.reveal('.side-form__item', {
+      delay: 600,
+      distance: '100px',
+      duration: 1100,
+      rotate: { x: 60, y: 60 },
+      scale: .2,
+      viewFactor: .3
+    }, 400);
+
+    // sr.reveal('.section__header--text-right', {
+    //   origin: 'left';
+    // });
+
+  }
+
+  return {
+    init: init
+  }
+})();
+
+
 const DOM = {
   $main_slider: $('.main-slider'),
+  $main_slider_wrap: $('.main-slider__wrap'),
   $thoughts__slider: $('.thoughts__slider'),
   $venobox: $('.venobox'),
   $header: $('.l-header'),
   $nav_btn: $('.nav-btn'),
-  $main_nav: $('.main-nav')
+  $main_nav_ul: $('.main-nav__ul'),
+  $main_nav: $('.main-nav'),
+  $preloader: $('#preloader')
 };
 
 var PAGE_API = (function(){
@@ -123,12 +227,20 @@ var PAGE_API = (function(){
     })
   }
 
+  function hidePreloader() {
+    $.when(DOM.$preloader.fadeOut(200))
+    .done(function(){
+      PAGE_ANIMATION.init();
+    });
+  }
+
   function init() {
     setBasePlugins();
     $(document).on("scroll", onScroll);
     setSmoothScrollingToAnchor();
     preventEmptyLink();
     navBtn();
+    hidePreloader();
   }
 
   return {

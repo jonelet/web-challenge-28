@@ -5,6 +5,7 @@ if (!process.env.NODE_ENV) {
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -37,6 +38,10 @@ var user_plugins = [
   new HtmlWebpackPlugin({
     title: 'Challenge 28',
     template: 'src/index.html'
+  }),
+
+  new ScriptExtHtmlWebpackPlugin({
+    defaultAttribute: 'async'
   }),
 
   new webpack.DefinePlugin({

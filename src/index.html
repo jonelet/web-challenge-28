@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <title><%= htmlWebpackPlugin.options.title %></title>
+
+  <%= require('html-loader!./templates/preloader-head.html') %>
+
 </head>
 <body>
   <%= require('html-loader!./templates/header.html') %>
@@ -23,5 +26,7 @@
   <%= require('html-loader!./templates/contact.html') %>
 
   <%= require('html-loader!./templates/footer.html') %>
+
+  <%= require('html-loader!./templates/preloader.html') %>
 </body>
 </html>

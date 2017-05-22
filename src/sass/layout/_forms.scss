@@ -32,9 +32,11 @@
     outline: none;
   };
 
+  width: 100%;
   border: none;
   background: none;
 
   color: $text-light-color;
   font-family: $primary-font;
+  font-size: rem(22px);
 }
