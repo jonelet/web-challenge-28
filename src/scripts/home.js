@@ -27,7 +27,7 @@ const PAGE_ANIMATION = (function(){
       scale: 1
     });
 
-    sr.reveal('.albums__item-row', {
+    sr.reveal('.albums__item-col.fooReveal', {
       delay: 600,
       distance: '30%',
       duration: 1300,
@@ -38,15 +38,15 @@ const PAGE_ANIMATION = (function(){
     sr.reveal('.thoughts__item', {
       delay: 300,
       distance: '100px',
-      duration: 1100,
+      duration: 600,
       rotate: { x: 60, y: 60 },
       scale: .2
     }, 300);
 
     sr.reveal('.section__header--side-left', {
       delay: 200,
-      duration: 1100,
-      distance: '30%',
+      duration: 600,
+      distance: '20%',
       origin: 'right',
       scale: 1,
       viewFactor: .4

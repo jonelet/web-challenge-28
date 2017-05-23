@@ -104,14 +104,17 @@ const config = {
               importLoaders: 2
               }
             },
-
+            {
+              loader: 'postcss-loader'
+            },
             {
               loader: 'sass-loader',
               query: {
                 sourceMap: options.sourceMap,
                 sourceMapContents: options.sourceMap
               }
-          }]
+          }
+        ]
         })
       },
       // sass end
