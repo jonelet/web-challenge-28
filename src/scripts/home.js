@@ -87,10 +87,6 @@ const PAGE_ANIMATION = (function(){
       viewFactor: .3
     }, 400);
 
-    // sr.reveal('.section__header--text-right', {
-    //   origin: 'left';
-    // });
-
   }
 
   return {
@@ -115,12 +111,17 @@ var PAGE_API = (function(){
   function setSmoothScrollingToAnchor(){
     $('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-
             var target = $(this.hash);
+            var closest_is_active = $(this).closest('.is_active');
+
+            if (closest_is_active.length > 0) {
+              closest_is_active.removeClass('is_active');
+            }
+
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
                 $('html,body').animate({
-                    scrollTop: target.offset().top
+                    scrollTop: target.offset().top - 30
                 }, 1300);
                 return false;
             }
